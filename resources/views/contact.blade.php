@@ -5,7 +5,17 @@
 @section('content')
     <h1>Contact Page</h1>
 
-    <form  action="{{route('contact-form')}}" method="post">
+    @if($errors->any())
+        <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+        </div>
+    @endif
+
+    <form action="{{route('contact-form')}}" method="post">
         <!--Private key in laravel for all forms  -->
         @csrf
 
