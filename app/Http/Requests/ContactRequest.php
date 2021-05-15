@@ -26,7 +26,7 @@ class ContactRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|email',
-            'subject' => 'required|min:5|max:50',
+            'topicOfMessage' => 'required|min:5|max:50',
             'message' => 'required|min:5|max:50'
         ];
     }
@@ -43,7 +43,7 @@ class ContactRequest extends FormRequest
         return [
             'name.required' => 'Name field is important',
             'email.required' => 'Email field is important',
-            'subject.required' => 'Subject field is important',
+            'topicOfMessage.required' => 'topicOfMessage field is important',
             'message.required' => 'Message field is important'
         ];
     }
