@@ -20,4 +20,12 @@ class ContactController extends Controller
 
         return redirect()->route('home')->with('success', "Message has been added");
     }
+
+    public function allData()
+    {
+        $contact = new Contact();
+        //return view('messages', ['data' => $contact->orderBy('id','asc')->take(1)->get()]);
+        // '<>' in sql means !=
+        return view('messages', ['data' => $contact->where('topicOfMessage', '<>', 'Hi im Den')->get()]);
+    }
 }
